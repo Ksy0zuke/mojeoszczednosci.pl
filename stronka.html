@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje oszczędności</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src="skrypt.js" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Moje oszczędności</h1>
+            <p>Odkładaj kasde i kontroluj, na co już cie stać</p>
+        </header>
+
+        <section class="panel">
+            <label class="panel" for="savings">
+                Ile masz aktualnie odłożone?
+            </label>
+
+            <div class="money-wrapper">
+                <input 
+                class="money-input"
+                type="number"
+                id="savings"
+                min="0"
+                step="0.01"
+                value="0"
+                >
+                <span>zł</span>
+            </div>
+
+            <p class="hint">
+                Zmieniaj kwote, gdy odkładasz lub wydajesz pieniądze.
+            </p>
+        </section>
+
+        <section class="summary">
+            <div class="stat">
+                <span>ODŁOŻONA KWOTA</span>
+                <strong id="totalSavings">0 / 0</strong>
+            </div>
+
+            <div class="stat">
+                <span>NAJDROŻSZY CEL</span>
+                <strong id="mostExpensive"> - </strong>
+            </div>
+
+            <div class="stat">
+                <span>MOŻESZ JUZ KUPIĆ</span>
+                <strong id="availableCount">0 / 0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>DODAJ NOWY PRZEDMIOT</h2>
+
+            <form id="itemForm" class="form-grid">
+                <input 
+                class="field"
+                type="text"
+                id="itemName"
+                placeholder="Nazwa przedmiotu"
+                maxlength="100"
+                required
+                >
+
+                <input 
+                class="field"
+                type="number"
+                id="itemPrice"
+                placeholder="Cena w zł"
+                min="0.01"
+                max="10000000000"
+                step="0.01"
+                required
+                >
+
+                <button class="primary"
+                type="submit">
+                            Dodaj przedmiot
+                </button>
+            </form>
+        </section>
+
+        <section>
+            <div class="items-header">
+                <h2>Twoje cele</h2>
+                <span id="itemCount"
+                class="label">  0 Przedmiotów
+                </span>
+            </div>
+
+            <div id="items" class="items"></div>
+        </section>
+    
+</div>
+</body>
+</html>
